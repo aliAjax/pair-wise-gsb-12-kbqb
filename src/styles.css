@@ -83,7 +83,7 @@ h1 {
 
 .metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 14px;
   margin-bottom: 18px;
 }
@@ -249,6 +249,183 @@ textarea {
   text-align: center;
   color: #69758c;
   padding: 32px 12px;
+}
+
+/* 页签 */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.tab {
+  background: #fff;
+  color: #445069;
+  border: 1px solid #d9e2ee;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab.active {
+  background: #176b87;
+  color: #fff;
+  border-color: #176b87;
+}
+
+.badge {
+  background: #c84b31;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+.panel.full {
+  grid-column: 1 / -1;
+}
+
+.stack-panels {
+  display: grid;
+  gap: 18px;
+}
+
+.hint {
+  color: #69758c;
+  font-size: 13px;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.error-box {
+  border: 1px solid #efc5bb;
+  background: #fdf1ee;
+  color: #a03a24;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.error-box ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.status.warn {
+  background: #fdf3e3;
+  color: #9a6a12;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 13px;
+  background: #eef5fb;
+  color: #445069;
+}
+
+.chip.warn {
+  background: #fdf3e3;
+  color: #9a6a12;
+}
+
+.inline-select {
+  width: auto;
+  min-width: 180px;
+}
+
+/* 点名步骤条 */
+.rollcall {
+  margin-bottom: 12px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.step {
+  border: 1px solid #dfe7f1;
+  border-radius: 8px;
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+  background: #fff;
+}
+
+.step .step-label {
+  font-weight: 700;
+  color: #445069;
+}
+
+.step em {
+  font-style: normal;
+  color: #69758c;
+  font-size: 13px;
+}
+
+.step.done {
+  border-color: #bfe3d4;
+  background: #f2faf6;
+}
+
+.step.done em {
+  color: #14724f;
+}
+
+.step.absent, .step.wrongStop {
+  border-color: #efc5bb;
+  background: #fdf1ee;
+}
+
+.step.absent em, .step.wrongStop em {
+  color: #a03a24;
+}
+
+.step.current {
+  border-color: #176b87;
+  box-shadow: 0 0 0 2px rgba(23, 107, 135, 0.15);
+}
+
+.step-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.step-actions button {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.inline-form {
+  border: 1px dashed #c84b31;
+  border-radius: 8px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+  background: #fff8f6;
+  margin-top: 4px;
+}
+
+@media (max-width: 860px) {
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .time-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
